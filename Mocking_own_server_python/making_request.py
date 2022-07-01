@@ -13,12 +13,13 @@ headers={
 
 def get_data():
     resp=requests.get("http://localhost:8001/")
-    return (resp.text)
+    return (resp.headers)
+
 
 def send_post_req():
     resp=requests.post("http://localhost:8001",data=json.dumps(post_data))
     return (resp.text)
 
 if __name__ == "__main__":
-    # print(get_data())
-    print(send_post_req())
+    print(get_data())
+    # print(send_post_req())
